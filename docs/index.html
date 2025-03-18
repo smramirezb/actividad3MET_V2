@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Métodos y Simulación Estadística" />
+
+
+<title> Actividad 3</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore"><span style="color:#686868">
+<strong>Actividad 3</strong></span></h1>
+<h4 class="author">Métodos y Simulación Estadística</h4>
+
+</div>
+
+
+</br></br>
+<h2>
+Caso de estudio y creación de herramienta interactiva
+</h2>
+<p>A pesar de los avances en el nivel educativo de la población
+portuguesa en las últimas décadas, las estadísticas continúan ubicando a
+Portugal entre los países con peores indicadores en Europa,
+principalmente debido a sus elevadas tasas de fracaso escolar. En
+particular, el bajo desempeño en asignaturas fundamentales como
+Matemáticas y Lengua Portuguesa representa un desafío crítico.</p>
+<p>Este estudio analiza el rendimiento académico en la educación
+secundaria mediante un modelo de regresión lineal simple. Para ello,
+secuenta con datos de estudiantes, incluyendo calificaciones,
+características demográficas, factores sociales y aspectos relacionados
+con el entorno escolar, a partir de informes escolares y
+cuestionarios.</p>
+<p>Como aplicación directa de este trabajo, se busca desarrollar una
+herramienta interactiva utilizando <strong>Shiny</strong> y
+<strong>R</strong>, que permita modelar y predecir la calificación final
+de los estudiantes.</p>
+</br></br>
+<h3>
+Objetivos:
+</h3>
+<ul>
+<li><p>Ajustar un modelo de regresión lineal simple para predecir la
+nota final del estudiante (G3). Este proceso incluirá la exploración de
+datos mediante gráficos, la evaluación estadística mediante pruebas t y
+F, el análisis de diagnóstico del modelo, así como la construcción de
+intervalos de confianza para los parámetros y para la estimación de la
+nota final condicionada a valores de la variable predictora, además de
+la generación de predicciones.</p></li>
+<li><p>Desarrollar una interfaz de usuario con múltiples pestañas que
+permita ajustar el modelo, visualizar gráficos y realizar predicciones.
+Se implementarán elementos dinámicos, como la selección de variables y
+la exclusión de observaciones, para modificar el modelo en tiempo real.
+Además, se generarán gráficos interactivos para representar
+correlaciones, evaluar el diagnóstico del modelo y visualizar
+predicciones con intervalos de confianza.</p></li>
+<li><p>Elaborar un informe de máximo tres páginas que resuma los
+aspectos más relevantes del análisis, incluyendo la exploración de
+datos, el ajuste del modelo, la inferencia estadística, la evaluación de
+los supuestos, la identificación de datos influyentes o atípicos, y la
+construcción de intervalos de confianza y predicciones.</p></li>
+</ul>
+</br></br>
+<h3>
+Instrucciones:
+</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Descargar los datos</strong>: Para poder descargar los
+datos deben crear un perfil en <a href="https://archive.ics.uci.edu/">UC
+Irvine</a> Acceda a la descripción de las variables y a los datos
+disponibles en el siguiente enlace:<br />
+<a
+href="https://archive.ics.uci.edu/dataset/320/student+performance">Datos
+de Predict student performance in secondary education</a>
+Adicionalmente, puede consultar un artículo derivado de una
+investigación basada en estos datos en el siguiente enlace: <a
+href="https://repositorium.sdum.uminho.pt/bitstream/1822/8024/1/student.pdf">Artículo</a></p></li>
+<li><p><strong>Ajustar una Regresión Lineal Simple</strong> para
+predecir <strong>G3</strong> con la variable que mejor la modele.
+Aplicar estadística descriptivas, pruebas de hipótesis, intervalos y
+todo lo requerido para validar el modelo.</p></li>
+<li><p><strong>Definir la interfaz de usuario (UI)</strong></p>
+<ul>
+<li><p>Implementar un diseño con pestañas: una para la exploración de
+datos, otra para el resumen del modelo, una para diagnóstico y otra para
+predicción.</p></li>
+<li><p>Incluir controles dinámicos como para seleccionar la variable
+predictora y para excluir observaciones.</p></li>
+</ul></li>
+<li><p><strong>Definir la lógica del servidor</strong></p>
+<ul>
+<li><p>Ajustar un modelo de regresión lineal en función de las opciones
+seleccionadas en la interfaz.</p></li>
+<li><p>Implementar pruebas de supuestos del modelo y presentar los
+resultados en tablas interactivas.</p></li>
+<li><p>Generar gráficos con para visualizar correlaciones, residuos y
+predicciones.</p></li>
+</ul></li>
+</ol>
+</br></br>
+<h3>
+Entregable:
+</h3>
+<ol style="list-style-type: decimal">
+<li><p>Un archivo (.zip) que contenga los datos y un archivo en formato
+<strong>R</strong> o <strong>RMarkdown</strong> (.Rmd) con el código de
+la aplicación desarrollada en <strong>Shiny</strong> y
+<strong>R</strong>.</p></li>
+<li><p>Un archivo (.zip) que incluya datos, un archivo en formato
+<strong>RMarkdown</strong> (.Rmd) que tenga el informe en
+<strong>HTML</strong> creado con <strong>RMarkdown</strong> de
+<strong>máximo cuatro páginas</strong> (no incluye ni referencias ni
+anexos) que incluya las siguientes secciones:</p>
+<ul>
+<li><p>Exploración de datos: Análisis descriptivo mediante gráficos y
+tablas.</p></li>
+<li><p>Modelo de regresión lineal: Presentación del modelo y evaluación
+estadística a través de pruebas t y F, R cuadrado.</p></li>
+<li><p>Análisis de diagnóstico: Evaluación de los supuestos del
+modelo.</p></li>
+<li><p>Intervalos de confianza y predicciones: Construcción de
+intervalos de confianza para los parámetros del modelo y para la
+esperanza de la nota final condicionada a valores de la variable
+predictora, además de la generación de predicciones de las
+notas.</p></li>
+<li><p>Discusión y conclusiones: Interpretación de los resultados y
+principales hallazgos.</p></li>
+<li><p>Referencias bibliográficas: Fuentes consultadas para el
+desarrollo del trabajo.</p></li>
+<li><p>Anexos: Códigos, gráficos y tablas que respalden el
+informe.</p></li>
+</ul></li>
+</ol>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

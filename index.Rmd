@@ -1,0 +1,86 @@
+---
+title: <span style="color:#686868"> **Actividad 3**</span>
+author: "Métodos y Simulación Estadística"
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+</br></br>
+<h2>Caso de estudio y creación de herramienta interactiva</h2>
+
+A pesar de los avances en el nivel educativo de la población portuguesa en las últimas décadas, las estadísticas continúan ubicando a Portugal entre los países con peores indicadores en Europa, principalmente debido a sus elevadas tasas de fracaso escolar. En particular, el bajo desempeño en asignaturas fundamentales como Matemáticas y Lengua Portuguesa representa un desafío crítico.
+
+Este estudio analiza el rendimiento académico en la educación secundaria mediante un modelo de regresión lineal simple. Para ello, secuenta con datos  de estudiantes, incluyendo calificaciones, características demográficas, factores sociales y aspectos relacionados con el entorno escolar, a partir de informes escolares y cuestionarios.
+
+Como aplicación directa de este trabajo, se busca desarrollar una herramienta interactiva utilizando **Shiny** y **R**, que permita modelar y predecir la calificación final de los estudiantes.
+
+
+
+</br></br>
+<h3>Objetivos:</h3>
+
+
+- Ajustar un modelo de regresión lineal simple para predecir la nota final del estudiante (G3). Este proceso incluirá la exploración de datos mediante gráficos, la evaluación estadística mediante pruebas t y F, el análisis de diagnóstico del modelo, así como la construcción de intervalos de confianza para los parámetros y para la estimación de la nota final condicionada a valores de la variable predictora, además de la generación de predicciones.
+
+- Desarrollar una interfaz de usuario con múltiples pestañas que permita ajustar el modelo, visualizar gráficos y realizar predicciones. Se implementarán elementos dinámicos, como la selección de variables y la exclusión de observaciones, para modificar el modelo en tiempo real. Además, se generarán gráficos interactivos para representar correlaciones, evaluar el diagnóstico del modelo y visualizar predicciones con intervalos de confianza.
+
+- Elaborar un informe de máximo tres páginas que resuma los aspectos más relevantes del análisis, incluyendo la exploración de datos, el ajuste del modelo, la inferencia estadística, la evaluación de los supuestos, la identificación de datos influyentes o atípicos, y la construcción de intervalos de confianza y predicciones.
+
+
+</br></br>
+<h3>Instrucciones:</h3>
+
+
+1. **Descargar los datos**: Para poder descargar los datos deben crear un perfil en [UC Irvine](https://archive.ics.uci.edu/) Acceda a la descripción de las variables y a los datos disponibles en el siguiente enlace:  
+   [Datos de Predict student performance in secondary education](https://archive.ics.uci.edu/dataset/320/student+performance)  Adicionalmente, puede consultar un artículo derivado de una investigación basada en estos datos en el siguiente enlace: [Artículo](https://repositorium.sdum.uminho.pt/bitstream/1822/8024/1/student.pdf)
+
+2. **Ajustar una Regresión Lineal Simple** para predecir **G3** con la variable que mejor la modele. Aplicar estadística descriptivas, pruebas de hipótesis, intervalos y todo lo requerido para validar el modelo.
+
+3. **Definir la interfaz de usuario (UI)**  
+
+   - Implementar un diseño con pestañas: una para la exploración de datos, otra para el resumen del modelo, una para diagnóstico y otra para predicción.
+   
+   - Incluir controles dinámicos como  para seleccionar la variable predictora y  para excluir observaciones.
+
+4. **Definir la lógica del servidor** 
+
+   - Ajustar un modelo de regresión lineal en función de las opciones seleccionadas en la interfaz.
+   
+   - Implementar pruebas de supuestos del modelo y presentar los resultados en tablas interactivas.
+   
+   - Generar gráficos con para visualizar correlaciones, residuos y predicciones.
+
+
+
+
+</br></br>
+<h3>Entregable:</h3>
+
+
+1. Un archivo (.zip) que contenga los datos y un archivo en formato **R** o **RMarkdown** (.Rmd) con el código de la aplicación desarrollada en **Shiny** y **R**.
+
+2. Un archivo (.zip) que incluya datos, un archivo en formato **RMarkdown** (.Rmd) que tenga el informe en **HTML** creado con **RMarkdown** de **máximo cuatro páginas** (no incluye ni referencias ni anexos) que incluya las siguientes secciones:
+
+   - Exploración de datos: Análisis descriptivo mediante gráficos y tablas.
+   
+   - Modelo de regresión lineal: Presentación del modelo y evaluación estadística a través de pruebas t y F, R cuadrado.
+   
+   - Análisis de diagnóstico: Evaluación de los supuestos del modelo.
+   
+   - Intervalos de confianza y predicciones: Construcción de intervalos de confianza para los parámetros del modelo y para la esperanza de la nota final condicionada a valores de la variable predictora, además de la generación de predicciones de las notas.
+   
+   - Discusión y conclusiones: Interpretación de los resultados y principales hallazgos.
+   
+   -  Referencias bibliográficas: Fuentes consultadas para el desarrollo del trabajo.
+   
+   - Anexos: Códigos, gráficos y tablas que respalden el informe.
+
+
+
