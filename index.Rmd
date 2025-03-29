@@ -19,7 +19,7 @@ A pesar de los avances en el nivel educativo de la población portuguesa en las 
 
 Este estudio analiza el rendimiento académico en la educación secundaria mediante un modelo de regresión lineal simple. Para ello, secuenta con datos  de estudiantes, incluyendo calificaciones, características demográficas, factores sociales y aspectos relacionados con el entorno escolar, a partir de informes escolares y cuestionarios.
 
-Como aplicación directa de este trabajo, se busca desarrollar una herramienta interactiva utilizando **Shiny** y **R**, que permita modelar y predecir la calificación final de los estudiantes.
+Como aplicación directa de este trabajo, se busca **generar un informe** y **desarrollar una herramienta interactiva** utilizando **Shiny** y **R**, que permita modelar y predecir la calificación final de los estudiantes.
 
 
 
@@ -27,11 +27,11 @@ Como aplicación directa de este trabajo, se busca desarrollar una herramienta i
 <h3>Objetivos:</h3>
 
 
-- Ajustar un modelo de regresión lineal simple para predecir la nota final del estudiante (G3). Este proceso incluirá la exploración de datos mediante gráficos, la evaluación estadística mediante pruebas t y F, coeficiente de determinación, el análisis de diagnóstico del modelo, así como la construcción de intervalos de confianza para los parámetros y para la estimación de la nota final condicionada a valores de la variable predictora, además de la generación de predicciones.
+- Ajustar un **modelo de regresión lineal simple** para predecir la **nota final del estudiante (G3)**. Este proceso incluirá la exploración de datos mediante gráficos, la evaluación estadística mediante pruebas t y F, coeficiente de determinación, el análisis de diagnóstico del modelo, así como la construcción de intervalos de confianza para los parámetros del modelo y para la estimación de la nota media final condicionada a valores de la variable predictora, además de la generación de predicciones de la nota final.
 
-- Desarrollar una interfaz de usuario con múltiples pestañas que permita ajustar el modelo, visualizar gráficos y realizar predicciones. Se implementarán elementos dinámicos, como la selección de variables y la exclusión de observaciones, para modificar el modelo en tiempo real. Además, se generarán gráficos interactivos para representar correlaciones, evaluar el diagnóstico del modelo y visualizar predicciones con intervalos de confianza.
+- **Desarrollar una interfaz de usuario con múltiples pestañas** que permita ajustar un modelo de regresión lineal simple. Se debe implementar elementos dinámicos, como la selección de variables predictoras y la exclusión de observaciones, para modificar el modelo en tiempo real. Además, se debe generar gráficos interactivos para representar correlaciones, evaluar el diagnóstico del modelo y visualizar intervalos de confianza de la media condicional y predicciones. También se incluirá la presentación del modelo estimado junto con las pruebas de hipótesis que lo respaldan.
 
-- Elaborar un informe de máximo cuatro páginas que resuma los aspectos más relevantes del análisis, incluyendo la exploración de datos, el ajuste del modelo, la inferencia estadística, la evaluación de los supuestos, la identificación de datos influyentes o atípicos, y la construcción de intervalos de confianza y predicciones.
+- **Elaborar un informe de hasta cuatro páginas** que resuma los aspectos más relevantes del análisis, incluyendo la exploración de datos, el ajuste del modelo, la inferencia estadística, la evaluación de supuestos, la detección de datos influyentes o atípicos, y la construcción de intervalos de confianza y predicciones.
 
 
 </br></br>
@@ -64,23 +64,25 @@ Como aplicación directa de este trabajo, se busca desarrollar una herramienta i
 <h3>Entregable:</h3>
 
 
-1. Un archivo (.zip) que contenga los datos y un archivo en formato **R** o **RMarkdown** (.Rmd) con el código de la aplicación desarrollada en **Shiny** y **R**.
+1. **Herramienta interactiva**: Un archivo (.zip) que contenga los datos y un archivo en formato R (.R) con el código de la aplicación desarrollada en **Shiny** y **R**.
 
-2. Un archivo (.zip) que incluya datos, un archivo en formato **RMarkdown** (.Rmd) que tenga el informe en **HTML** creado con **RMarkdown** de **máximo cuatro páginas** (no incluye ni referencias ni anexos) que incluya las siguientes secciones:
+2. **Informe**: Un archivo (.zip) que contenga los datos y un archivo en formato RMarkdown (.Rmd) con el informe en HTML, generado con RMarkdown, de hasta cuatro páginas (sin contar referencias ni anexos). El informe debe incluir las siguientes secciones:
 
-   - Exploración de datos: Análisis descriptivo mediante gráficos y tablas.
+    - **Exploración de datos**: Análisis descriptivo mediante gráficos y tablas.
    
-   - Modelo de regresión lineal: Presentación del modelo y evaluación estadística a través de pruebas t y F, así como el coeficiente de determinación.
+    - **Modelo de regresión lineal**: Presentación del modelo y evaluación estadística a través de pruebas t y F, junto con el coeficiente de determinación.
    
-   - Análisis de diagnóstico: Evaluación de los supuestos del modelo.
+    - **Análisis de diagnóstico**: Evaluación del cumplimiento de los supuestos del modelo.
    
-   - Intervalos de confianza y predicciones: Construcción de intervalos de confianza para los parámetros del modelo y para la esperanza de la nota final condicionada a valores de la variable predictora, además de la generación de predicciones de las notas.
+    - **Análisis de datos atípicos o influyentes**: Generación de gráficos y cálculos para identificar observaciones atípicas o con alta influencia en el modelo.
    
-   - Discusión y conclusiones: Interpretación de los resultados y principales hallazgos.
+    - **Intervalos de confianza y predicciones**: Construcción de intervalos de confianza para los parámetros del modelo y para la esperanza de la nota final, condicionada a valores de la variable predictora, además de la generación de predicciones.
    
-   -  Referencias bibliográficas: Fuentes consultadas para el desarrollo del trabajo.
+    - **Discusión y conclusiones**: Interpretación de los resultados y principales hallazgos.
    
-   - Anexos: Códigos, gráficos y tablas que respalden el informe.
+    - **Referencias bibliográficas**: Fuentes consultadas para el desarrollo del trabajo.
+   
+    - **Anexos**: Códigos, gráficos y tablas que respalden el informe.
 
 
 

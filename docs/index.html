@@ -292,8 +292,9 @@ secuenta con datos de estudiantes, incluyendo calificaciones,
 características demográficas, factores sociales y aspectos relacionados
 con el entorno escolar, a partir de informes escolares y
 cuestionarios.</p>
-<p>Como aplicación directa de este trabajo, se busca desarrollar una
-herramienta interactiva utilizando <strong>Shiny</strong> y
+<p>Como aplicación directa de este trabajo, se busca <strong>generar un
+informe</strong> y <strong>desarrollar una herramienta
+interactiva</strong> utilizando <strong>Shiny</strong> y
 <strong>R</strong>, que permita modelar y predecir la calificación final
 de los estudiantes.</p>
 </br></br>
@@ -301,25 +302,30 @@ de los estudiantes.</p>
 Objetivos:
 </h3>
 <ul>
-<li><p>Ajustar un modelo de regresión lineal simple para predecir la
-nota final del estudiante (G3). Este proceso incluirá la exploración de
-datos mediante gráficos, la evaluación estadística mediante pruebas t y
-F, coeficiente de determinación, el análisis de diagnóstico del modelo,
-así como la construcción de intervalos de confianza para los parámetros
-y para la estimación de la nota final condicionada a valores de la
-variable predictora, además de la generación de predicciones.</p></li>
-<li><p>Desarrollar una interfaz de usuario con múltiples pestañas que
-permita ajustar el modelo, visualizar gráficos y realizar predicciones.
-Se implementarán elementos dinámicos, como la selección de variables y
-la exclusión de observaciones, para modificar el modelo en tiempo real.
-Además, se generarán gráficos interactivos para representar
-correlaciones, evaluar el diagnóstico del modelo y visualizar
-predicciones con intervalos de confianza.</p></li>
-<li><p>Elaborar un informe de máximo cuatro páginas que resuma los
-aspectos más relevantes del análisis, incluyendo la exploración de
-datos, el ajuste del modelo, la inferencia estadística, la evaluación de
-los supuestos, la identificación de datos influyentes o atípicos, y la
-construcción de intervalos de confianza y predicciones.</p></li>
+<li><p>Ajustar un <strong>modelo de regresión lineal simple</strong>
+para predecir la <strong>nota final del estudiante (G3)</strong>. Este
+proceso incluirá la exploración de datos mediante gráficos, la
+evaluación estadística mediante pruebas t y F, coeficiente de
+determinación, el análisis de diagnóstico del modelo, así como la
+construcción de intervalos de confianza para los parámetros del modelo y
+para la estimación de la nota media final condicionada a valores de la
+variable predictora, además de la generación de predicciones de la nota
+final.</p></li>
+<li><p><strong>Desarrollar una interfaz de usuario con múltiples
+pestañas</strong> que permita ajustar un modelo de regresión lineal
+simple. Se debe implementar elementos dinámicos, como la selección de
+variables predictoras y la exclusión de observaciones, para modificar el
+modelo en tiempo real. Además, se debe generar gráficos interactivos
+para representar correlaciones, evaluar el diagnóstico del modelo y
+visualizar intervalos de confianza de la media condicional y
+predicciones. También se incluirá la presentación del modelo estimado
+junto con las pruebas de hipótesis que lo respaldan.</p></li>
+<li><p><strong>Elaborar un informe de hasta cuatro páginas</strong> que
+resuma los aspectos más relevantes del análisis, incluyendo la
+exploración de datos, el ajuste del modelo, la inferencia estadística,
+la evaluación de supuestos, la detección de datos influyentes o
+atípicos, y la construcción de intervalos de confianza y
+predicciones.</p></li>
 </ul>
 </br></br>
 <h3>
@@ -363,34 +369,35 @@ predicciones.</p></li>
 Entregable:
 </h3>
 <ol style="list-style-type: decimal">
-<li><p>Un archivo (.zip) que contenga los datos y un archivo en formato
-<strong>R</strong> o <strong>RMarkdown</strong> (.Rmd) con el código de
-la aplicación desarrollada en <strong>Shiny</strong> y
+<li><p><strong>Herramienta interactiva</strong>: Un archivo (.zip) que
+contenga los datos y un archivo en formato R (.R) con el código de la
+aplicación desarrollada en <strong>Shiny</strong> y
 <strong>R</strong>.</p></li>
-<li><p>Un archivo (.zip) que incluya datos, un archivo en formato
-<strong>RMarkdown</strong> (.Rmd) que tenga el informe en
-<strong>HTML</strong> creado con <strong>RMarkdown</strong> de
-<strong>máximo cuatro páginas</strong> (no incluye ni referencias ni
-anexos) que incluya las siguientes secciones:</p>
+<li><p><strong>Informe</strong>: Un archivo (.zip) que contenga los
+datos y un archivo en formato RMarkdown (.Rmd) con el informe en HTML,
+generado con RMarkdown, de hasta cuatro páginas (sin contar referencias
+ni anexos). El informe debe incluir las siguientes secciones:</p>
 <ul>
-<li><p>Exploración de datos: Análisis descriptivo mediante gráficos y
-tablas.</p></li>
-<li><p>Modelo de regresión lineal: Presentación del modelo y evaluación
-estadística a través de pruebas t y F, así como el coeficiente de
-determinación.</p></li>
-<li><p>Análisis de diagnóstico: Evaluación de los supuestos del
-modelo.</p></li>
-<li><p>Intervalos de confianza y predicciones: Construcción de
-intervalos de confianza para los parámetros del modelo y para la
-esperanza de la nota final condicionada a valores de la variable
-predictora, además de la generación de predicciones de las
-notas.</p></li>
-<li><p>Discusión y conclusiones: Interpretación de los resultados y
-principales hallazgos.</p></li>
-<li><p>Referencias bibliográficas: Fuentes consultadas para el
-desarrollo del trabajo.</p></li>
-<li><p>Anexos: Códigos, gráficos y tablas que respalden el
-informe.</p></li>
+<li><p><strong>Exploración de datos</strong>: Análisis descriptivo
+mediante gráficos y tablas.</p></li>
+<li><p><strong>Modelo de regresión lineal</strong>: Presentación del
+modelo y evaluación estadística a través de pruebas t y F, junto con el
+coeficiente de determinación.</p></li>
+<li><p><strong>Análisis de diagnóstico</strong>: Evaluación del
+cumplimiento de los supuestos del modelo.</p></li>
+<li><p><strong>Análisis de datos atípicos o influyentes</strong>:
+Generación de gráficos y cálculos para identificar observaciones
+atípicas o con alta influencia en el modelo.</p></li>
+<li><p><strong>Intervalos de confianza y predicciones</strong>:
+Construcción de intervalos de confianza para los parámetros del modelo y
+para la esperanza de la nota final, condicionada a valores de la
+variable predictora, además de la generación de predicciones.</p></li>
+<li><p><strong>Discusión y conclusiones</strong>: Interpretación de los
+resultados y principales hallazgos.</p></li>
+<li><p><strong>Referencias bibliográficas</strong>: Fuentes consultadas
+para el desarrollo del trabajo.</p></li>
+<li><p><strong>Anexos</strong>: Códigos, gráficos y tablas que respalden
+el informe.</p></li>
 </ul></li>
 </ol>
 
