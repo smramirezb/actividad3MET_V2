@@ -12,46 +12,60 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
+
+<div class="caja-nota">
+> *En la Unidad 3, el análisis se centra en el **modelo de regresión lineal simple**, utilizando una única variable **cuantitativa** como predictora. No se abordan relaciones más complejas ni modelos que incluyan múltiples variables predictoras.*  
+</div>
+
+<div class="caja-nota">
+> *En el siguiente curso, **Modelos Estadísticos para la Toma de Decisiones**, se estudiará el **modelo de regresión lineal múltiple**, el cual permite modelar una variable respuesta en función de varias variables predictoras, incluyendo tanto variables **cuantitativas** como **cualitativas**. Este modelo amplía las capacidades de análisis al considerar múltiples factores que pueden influir simultáneamente en la variable de interés.*
+</div>
+
+
 </br></br>
 <h2>Caso de estudio y creación de herramienta interactiva</h2>
 
-A pesar de los avances en el nivel educativo de la población portuguesa en las últimas décadas, las estadísticas continúan ubicando a Portugal entre los países con peores indicadores en Europa, principalmente debido a sus elevadas tasas de fracaso escolar. En particular, el bajo desempeño en asignaturas fundamentales como Matemáticas y Lengua Portuguesa representa un desafío crítico.
+A pesar de los avances en el nivel educativo de la población portuguesa durante las últimas décadas, las estadísticas aún ubican a Portugal entre los países con peores indicadores en Europa, principalmente debido a sus elevadas tasas de fracaso escolar. En particular, el bajo desempeño en asignaturas fundamentales como **Matemáticas** y **Lengua Portuguesa** representa un desafío crítico.
 
-Este estudio analiza el rendimiento académico en la educación secundaria mediante un modelo de regresión lineal simple. Para ello, secuenta con datos  de estudiantes, incluyendo calificaciones, características demográficas, factores sociales y aspectos relacionados con el entorno escolar, a partir de informes escolares y cuestionarios.
+Este estudio analiza el rendimiento académico en la educación secundaria en ambas asignaturas mediante un **modelo de regresión lineal simple**, utilizando una variable **cuantitativa** como predictora. Para ello, se cuenta con datos de estudiantes que incluyen calificaciones, características demográficas, factores sociales y aspectos relacionados con el entorno escolar, recopilados a partir de informes escolares y cuestionarios.
 
 Como aplicación directa de este trabajo, se busca **generar un informe** y **desarrollar una herramienta interactiva** utilizando **Shiny** y **R**, que permita modelar y predecir la calificación final de los estudiantes.
-
 
 
 </br></br>
 <h3>Objetivos:</h3>
 
 
-- Ajustar un **modelo de regresión lineal simple** para predecir la **nota final del estudiante (G3)**. Este proceso incluirá la exploración de datos mediante gráficos, la evaluación estadística mediante pruebas t y F, coeficiente de determinación, el análisis de diagnóstico del modelo, así como la construcción de intervalos de confianza para los parámetros del modelo y para la estimación de la nota media final condicionada a valores de la variable predictora, además de la generación de predicciones de la nota final.
+- Ajustar un **modelo de regresión lineal simple** utilizando una **variable cuantitativa** como predictora para estimar la **nota final del estudiante (G3)**, desarrollando un modelo para **Matemáticas (MAT)** y otro para **Lengua Portuguesa (POR)**. Este proceso incluye la exploración inicial de los datos mediante gráficos y tablas descriptivas; la evaluación estadística del modelo a través de pruebas **t** y **F**, y del **coeficiente de determinación (R²)**; el análisis de diagnóstico del modelo para verificar supuestos e identificar posibles influencias atípicas; la construcción de **intervalos de confianza** para los parámetros del modelo y para la estimación de la **nota media final** condicional a valores específicos de la variable predictora; y la generación de **predicciones puntuales** de la nota final del estudiante.
 
-- **Desarrollar una interfaz de usuario con múltiples pestañas** que permita ajustar un modelo de regresión lineal simple. Se debe implementar elementos dinámicos, como la selección de variables predictoras y la exclusión de observaciones, para modificar el modelo en tiempo real. Además, se debe generar gráficos interactivos para representar correlaciones, evaluar el diagnóstico del modelo y visualizar intervalos de confianza de la media condicional y predicciones. También se incluirá la presentación del modelo estimado junto con las pruebas de hipótesis que lo respaldan.
 
-- **Elaborar un informe de hasta cuatro páginas** que resuma los aspectos más relevantes del análisis, incluyendo la exploración de datos, el ajuste del modelo, la inferencia estadística, la evaluación de supuestos, la detección de datos influyentes o atípicos, y la construcción de intervalos de confianza y predicciones.
+- Desarrollar una **interfaz de usuario con múltiples pestañas** que permita ajustar un modelo de regresión lineal simple para predecir la nota final en **Matemáticas (MAT)** y otra en **Lengua Portuguesa (POR)**. Esta herramienta estará basada en los modelos obtenidos tras el análisis exploratorio y estadístico. Se deben implementar elementos dinámicos que permitan seleccionar la variable respuesta y la variable predictora, así como excluir observaciones para modificar el modelo en tiempo real. La aplicación deberá generar gráficos interactivos que representen correlaciones, evalúen el diagnóstico del modelo y visualicen intervalos de confianza tanto para la media condicional como para las predicciones individuales. Además, se presentará el modelo estimado acompañado de las pruebas de hipótesis que sustentan su validez.
+
+- Elaborar un **informe de hasta cuatro páginas** que resuma los aspectos más relevantes del análisis de los modelos seleccionados entre los ajustados. El informe debe incluir la exploración de datos, el ajuste del modelo, la inferencia estadística, la evaluación de los supuestos, la detección de observaciones influyentes o atípicas, así como la construcción de intervalos de confianza y predicciones. Adicionalmente, se debe incorporar una sección de **anexos** con los códigos comentados que respalden los procedimientos realizados para obtener los resultados presentados en el informe.
 
 
 </br></br>
 <h3>Instrucciones:</h3>
 
 
-1. **Descargar los datos**: Para poder descargar los datos deben crear un perfil en [UC Irvine](https://archive.ics.uci.edu/) Acceda a la descripción de las variables y a los datos disponibles en el siguiente enlace:  
-   [Datos de Predict student performance in secondary education](https://archive.ics.uci.edu/dataset/320/student+performance)  Adicionalmente, puede consultar un artículo derivado de una investigación basada en estos datos en el siguiente enlace: [Artículo](https://repositorium.sdum.uminho.pt/bitstream/1822/8024/1/student.pdf)
+1. **Descarga de los datos**: Para acceder al conjunto de datos, es necesario crear un perfil en el sitio de [UC Irvine](https://archive.ics.uci.edu/). Puede consultar la descripción de las variables y descargar los datos en el siguiente enlace:  [Datos del conjunto *Student Performance in Secondary Education*](https://archive.ics.uci.edu/dataset/320/student+performance) 
+Para comprender mejor la variable **G3** y el objetivo de modelado, se recomienda leer el artículo derivado de una investigación basada en este conjunto de datos, disponible en el siguiente enlace:  
+[Artículo académico](https://repositorium.sdum.uminho.pt/bitstream/1822/8024/1/student.pdf)
 
-2. **Ajustar una Regresión Lineal Simple** para predecir **G3** con la variable que mejor la modele. Aplicar estadística descriptivas, pruebas de hipótesis, intervalos y todo lo requerido para validar el modelo.
 
-3. **Definir la interfaz de usuario (UI)**  
+2. Ajustar un modelo de **regresión lineal simple** para predecir la calificación final (**G3**) en **Matemáticas (MAT)** y **Lengua Portuguesa (POR)**, utilizando la variable **cuantitativa** que mejor explique la variación de la respuesta en cada caso. El análisis debe incluir estadísticas descriptivas (gráficos y tablas), pruebas de hipótesis, construcción de intervalos de confianza y todos los procedimientos necesarios para validar adecuadamente el modelo ajustado.
 
-   - Implementar un diseño con pestañas: una para la exploración de datos, otra para el resumen del modelo, una para diagnóstico y otra para predicción.
-   
-   - Incluir controles dinámicos como  para seleccionar la variable predictora y  para excluir observaciones.
+
+3. **Definir la interfaz de usuario (UI)**
+
+- Implementar un diseño con múltiples pestañas que incluya una para visualizar la **matriz de correlaciones** entre variables, otra con el **resumen del modelo ajustado**, una adicional para el **análisis de diagnóstico** y una más dedicada a la **predicción** de la nota final.
+
+- La interfaz debe incorporar **controles dinámicos** que permitan seleccionar la variable respuesta y la variable predictora (preferiblemente entre las dos mejores variables cuantitativas), así como opciones para **excluir observaciones** del ajuste del modelo en tiempo real.
+
 
 4. **Definir la lógica del servidor** 
 
-   - Ajustar un modelo de regresión lineal en función de las opciones seleccionadas en la interfaz.
+   - Ajustar un modelo de regresión lineal simple en función de las opciones seleccionadas en la interfaz.
    
    - Implementar pruebas de supuestos del modelo y presentar los resultados en tablas interactivas.
    
@@ -66,23 +80,30 @@ Como aplicación directa de este trabajo, se busca **generar un informe** y **de
 
 1. **Herramienta interactiva**: Un archivo (.zip) que contenga los datos y un archivo en formato R (.R) con el código de la aplicación desarrollada en **Shiny** y **R**.
 
-2. **Informe**: Un archivo (.zip) que contenga los datos y un archivo en formato RMarkdown (.Rmd) con el informe en HTML, generado con RMarkdown, de hasta cuatro páginas (sin contar referencias ni anexos). El informe debe incluir las siguientes secciones:
+2. **Informe**: Un archivo comprimido (.zip) que contenga el conjunto de datos y un archivo en formato **RMarkdown** (`.Rmd`), junto con el **informe generado en HTML**, con una extensión máxima de **cuatro páginas** (sin contar referencias ni anexos). El informe debe incluir las siguientes secciones:
 
     - **Exploración de datos**: Análisis descriptivo mediante gráficos y tablas.
    
-    - **Modelo de regresión lineal**: Presentación del modelo y evaluación estadística a través de pruebas t y F, junto con el coeficiente de determinación.
+    - **Modelo de regresión lineal simple para modelar G3** (uno para **Matemáticas (MAT)** y otro para **Lengua Portuguesa (POR)**), utilizando una variable cuantitativa como predictora: descripción del modelo ajustado y evaluación estadística mediante pruebas **t** y **F**, junto con el **coeficiente de determinación (R²)**.
    
-    - **Análisis de diagnóstico**: Evaluación del cumplimiento de los supuestos del modelo.
+    - **Análisis de diagnóstico**: Verificación del cumplimiento de los supuestos del modelo mediante gráficos y pruebas de hipótesis.
    
     - **Análisis de datos atípicos o influyentes**: Generación de gráficos y cálculos para identificar observaciones atípicas o con alta influencia en el modelo.
    
-    - **Intervalos de confianza y predicciones**: Construcción de intervalos de confianza para los parámetros del modelo y para la esperanza de la nota final, condicionada a valores de la variable predictora, además de la generación de predicciones.
+    - **Intervalos de confianza y predicciones**: Construcción de intervalos de confianza para los parámetros del modelo y para la media condicional de la nota final, además de la generación de predicciones puntuales.
    
     - **Discusión y conclusiones**: Interpretación de los resultados y principales hallazgos.
    
     - **Referencias bibliográficas**: Fuentes consultadas para el desarrollo del trabajo.
    
-    - **Anexos**: Códigos, gráficos y tablas que respalden el informe.
+    - **Anexos**: Códigos, gráficos y tablas adicionales que respalden y complementen el contenido del informe.
 
 
+<div class="caja-nota">
+> *Esta actividad no incluye el uso de variables cualitativas como predictoras, ya que este tema no se aborda en la Unidad 3 y no está contemplado dentro del contenido del curso.*
+</div>
+
+<div class="caja-nota">
+> *La herramienta desarrollada en **Shiny** y **R** debe estar basada en el ejemplo presentado durante el curso. Sin embargo, a diferencia del ejemplo, en esta actividad se espera que la aplicación permita seleccionar **dos variables respuesta**. *
+</div>
 
