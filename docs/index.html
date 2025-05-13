@@ -276,12 +276,22 @@ $(document).ready(function () {
 </div>
 
 
+<p><img src="img/banner2.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>La modelación de datos y la visualización constituyen herramientas
+fundamentales para comprender relaciones complejas y tomar decisiones
+informadas en diversas áreas del conocimiento, así como en el ámbito
+industrial y empresarial. En esta actividad se presenta un problema
+real, acompañado de datos reales, con el propósito de ser modelado y de
+visualizar los resultados obtenidos. Esta actividad busca ofrecer un
+primer acercamiento a la modelación y a la visualización de datos. En
+los semestres siguientes, ambos temas serán abordados con mayor
+profundidad, lo que permitirá analizar relaciones más complejas.</p>
 <div class="caja-nota">
 <blockquote>
-<p><em>En la Unidad 3, el análisis se centra en el <strong>modelo de
-regresión lineal simple</strong>, utilizando una única variable
-<strong>cuantitativa</strong> como predictora. No se abordan relaciones
-más complejas ni modelos que incluyan múltiples variables
+<p><em>En la <strong>Unidad 3</strong>, el análisis se centra en el
+<strong>modelo de regresión lineal simple</strong>, utilizando una única
+variable <strong>cuantitativa</strong> como predictora. No se abordan
+relaciones más complejas ni modelos que incluyan múltiples variables
 predictoras.</em></p>
 </blockquote>
 </div>
@@ -299,7 +309,7 @@ interés.</em></p>
 </div>
 </br></br>
 <h2>
-Caso de estudio y creación de herramienta interactiva
+Caso de estudio y herramienta interactiva
 </h2>
 <p>A pesar de los avances en el nivel educativo de la población
 portuguesa durante las últimas décadas, las estadísticas aún ubican a
@@ -324,7 +334,7 @@ de los estudiantes.</p>
 <h3>
 Objetivos:
 </h3>
-<ul>
+<ol style="list-style-type: decimal">
 <li><p>Ajustar un <strong>modelo de regresión lineal simple</strong>
 utilizando una <strong>variable cuantitativa</strong> como predictora
 para estimar la <strong>nota final del estudiante (G3)</strong>,
@@ -353,7 +363,7 @@ correlaciones, evalúen el diagnóstico del modelo y visualicen intervalos
 de confianza tanto para la media condicional como para las predicciones
 individuales. Además, se presentará el modelo estimado acompañado de las
 pruebas de hipótesis que sustentan su validez.</p></li>
-<li><p>Elaborar un <strong>informe de hasta cuatro páginas</strong> que
+<li><p>Elaborar un <strong>informe de hasta 2,500 palabras</strong> que
 resuma los aspectos más relevantes del análisis de los modelos
 seleccionados entre los ajustados. El informe debe incluir la
 exploración de datos, el ajuste del modelo, la inferencia estadística,
@@ -363,13 +373,13 @@ confianza y predicciones. Adicionalmente, se debe incorporar una sección
 de <strong>anexos</strong> con los códigos comentados que respalden los
 procedimientos realizados para obtener los resultados presentados en el
 informe.</p></li>
-</ul>
+</ol>
 </br></br>
-<h3>
+<h2>
 Instrucciones:
-</h3>
+</h2>
 <ol style="list-style-type: decimal">
-<li><p><strong>Descarga de los datos</strong>: Para acceder al conjunto
+<li><p><strong>Descargar de los datos</strong>: Para acceder al conjunto
 de datos, es necesario crear un perfil en el sitio de <a
 href="https://archive.ics.uci.edu/">UC Irvine</a>. Puede consultar la
 descripción de las variables y descargar los datos en el siguiente
@@ -383,8 +393,8 @@ enlace:<br />
 <a
 href="https://repositorium.sdum.uminho.pt/bitstream/1822/8024/1/student.pdf">Artículo
 académico</a></p></li>
-<li><p>Ajustar un modelo de <strong>regresión lineal simple</strong>
-para predecir la calificación final (<strong>G3</strong>) en
+<li><p><strong>Ajustar un modelo de regresión lineal simple</strong>: El
+modelo debe predecir la calificación final (<strong>G3</strong>) en
 <strong>Matemáticas (MAT)</strong> y <strong>Lengua Portuguesa
 (POR)</strong>, utilizando la variable <strong>cuantitativa</strong> que
 mejor explique la variación de la respuesta en cada caso. El análisis
@@ -392,8 +402,7 @@ debe incluir estadísticas descriptivas (gráficos y tablas), pruebas de
 hipótesis, construcción de intervalos de confianza y todos los
 procedimientos necesarios para validar adecuadamente el modelo
 ajustado.</p></li>
-<li><p><strong>Definir la interfaz de usuario (UI)</strong></p></li>
-</ol>
+<li><p><strong>Definir la interfaz de usuario (UI)</strong></p>
 <ul>
 <li><p>Implementar un diseño con múltiples pestañas que incluya una para
 visualizar la <strong>matriz de correlaciones</strong> entre variables,
@@ -405,22 +414,22 @@ que permitan seleccionar la variable respuesta y la variable predictora
 (preferiblemente entre las dos mejores variables cuantitativas), así
 como opciones para <strong>excluir observaciones</strong> del ajuste del
 modelo en tiempo real.</p></li>
-</ul>
-<ol start="4" style="list-style-type: decimal">
+</ul></li>
 <li><p><strong>Definir la lógica del servidor</strong></p>
 <ul>
-<li><p>Ajustar un modelo de regresión lineal simple en función de las
-opciones seleccionadas en la interfaz.</p></li>
 <li><p>Implementar pruebas de supuestos del modelo y presentar los
 resultados en tablas interactivas.</p></li>
+<li><p>Ajustar un modelo de regresión lineal simple en función de las
+opciones seleccionadas en la interfaz.</p></li>
 <li><p>Generar gráficos con para visualizar correlaciones, residuos y
 predicciones.</p></li>
 </ul></li>
+<li><p><strong>Resolver individualmente</strong></p></li>
 </ol>
 </br></br>
-<h3>
+<h2>
 Entregable:
-</h3>
+</h2>
 <ol style="list-style-type: decimal">
 <li><p><strong>Herramienta interactiva</strong>: Un archivo (.zip) que
 contenga los datos y un archivo en formato R (.R) con el código de la
@@ -430,8 +439,9 @@ aplicación desarrollada en <strong>Shiny</strong> y
 contenga el conjunto de datos y un archivo en formato
 <strong>RMarkdown</strong> (<code>.Rmd</code>), junto con el
 <strong>informe generado en HTML</strong>, con una extensión máxima de
-<strong>cuatro páginas</strong> (sin contar referencias ni anexos). El
-informe debe incluir las siguientes secciones:</p>
+<strong>2,500 palabras</strong> (sin contar referencias ni anexos).
+Adicionalmente debe tener una sección de Referencias y Anexos. El
+documento debe incluir las siguientes secciones:</p>
 <ul>
 <li><p><strong>Exploración de datos</strong>: Análisis descriptivo
 mediante gráficos y tablas.</p></li>
@@ -462,20 +472,110 @@ que respalden y complementen el contenido del informe.</p></li>
 </ol>
 <div class="caja-nota">
 <blockquote>
-<p><em>Esta actividad no incluye el uso de variables cualitativas como
-predictoras, ya que este tema no se aborda en la Unidad 3 y no está
-contemplado dentro del contenido del curso.</em></p>
+<p><em>Esta actividad <strong>no incluye el uso de variables
+cualitativas</strong> como predictoras, ya que este tema no se aborda en
+la Unidad 3 y no está contemplado dentro del contenido del
+curso.</em></p>
 </blockquote>
 </div>
 <div class="caja-nota">
 <blockquote>
 <p><em>La herramienta desarrollada en <strong>Shiny</strong> y
-<strong>R</strong> debe estar basada en el ejemplo presentado durante el
-curso. Sin embargo, a diferencia del ejemplo, en esta actividad se
-espera que la aplicación permita seleccionar <strong>dos variables
-respuesta</strong>. </em></p>
+<strong>R</strong> debe estar basada en el ejemplo presentado en el
+material del curso. Sin embargo, a diferencia del ejemplo, en esta
+actividad se espera que la aplicación permita seleccionar <strong>dos
+variables respuesta</strong>. </em></p>
 </blockquote>
 </div>
+</br></br>
+<h2>
+Rúbrica de avaluación:
+</h2>
+<table style="width:100%;">
+<colgroup>
+<col width="11%" />
+<col width="18%" />
+<col width="16%" />
+<col width="17%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><strong>Criterio</strong></th>
+<th align="left"><strong>Muy alto (30 pts)</strong></th>
+<th align="left"><strong>Alto (25 pts)</strong></th>
+<th align="left"><strong>Medio (20 pts)</strong></th>
+<th align="left"><strong>Bajo (15 pts)</strong></th>
+<th align="left"><strong>Muy bajo (10 pts)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Ajustar un modelo de regresión lineal
+simple</strong><br>Incluye exploración de datos, pruebas t y F, análisis
+de diagnóstico, construcción de intervalos de confianza y generación de
+predicciones.</td>
+<td align="left">El modelo se ajusta de manera correcta; se realizan
+todas las evaluaciones requeridas y se presentan interpretaciones
+precisas, claras y justificadas.</td>
+<td align="left">El modelo se ajusta adecuadamente y se incluyen la
+mayoría de las evaluaciones requeridas, con interpretaciones
+correctas.</td>
+<td align="left">Se ajusta el modelo y se incluyen algunas evaluaciones,
+pero se presentan errores de interpretación o de cálculo.</td>
+<td align="left">Se ajusta el modelo, pero se omiten varias evaluaciones
+clave o se presentan errores significativos en la interpretación.</td>
+<td align="left">No se ajusta el modelo correctamente o se omiten la
+mayoría de las evaluaciones requeridas.</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Desarrollar una interfaz de
+usuario</strong><br>Permite ajustar el modelo, visualizar gráficos y
+realizar predicciones, incorporando selección de variables y exclusión
+de observaciones en tiempo real.</td>
+<td align="left">La interfaz es completamente funcional: permite ajustar
+el modelo correctamente, seleccionar variables, excluir observaciones y
+visualizar gráficos que verifican la linealidad, los supuestos y los
+datos atípicos o influyentes. Incluye además la visualización de los
+resultados de las pruebas de hipótesis que justifican el modelo.</td>
+<td align="left">La interfaz es funcional y permite realizar la mayoría
+de las interacciones requeridas, con gráficos adecuados.</td>
+<td align="left">La interfaz presenta funcionalidades limitadas o
+algunas interacciones no funcionan correctamente, incumpliendo parte de
+los requisitos.</td>
+<td align="left">La interfaz presenta fallas importantes, incumple gran
+parte de los requisitos o carece de varias funcionalidades
+esenciales.</td>
+<td align="left">No se desarrolla una interfaz o su implementación es
+inadecuada.</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Elaborar un informe de máximo 2,500
+palabras</strong><br>Resume la exploración de datos, el ajuste del
+modelo, la inferencia estadística, la evaluación de supuestos, el
+análisis de datos atípicos o influyentes y las predicciones.</td>
+<td align="left">El informe es claro, conciso y abarca todos los
+aspectos requeridos, con interpretaciones precisas y resultados bien
+justificados. Cumple plenamente las condiciones de entrega: incluye
+gráficos, tablas adecuadamente presentados y referenciados, así como
+secciones de Referencias y Anexos que respaldan los resultados.</td>
+<td align="left">El informe cubre la mayoría de los aspectos requeridos,
+con interpretaciones correctas en su mayor parte. Cumple en general con
+las condiciones de entrega, presentación y referenciación de gráficos,
+tablas, y secciones de Referencias y Anexos.</td>
+<td align="left">El informe es incompleto o presenta interpretaciones
+ambiguas, incorrectas o inconsistentes en varios aspectos clave. Puede
+no cumplir algunas condiciones de entrega en gráficos, tablas,
+referenciación o secciones requeridas.</td>
+<td align="left">El informe es poco claro o incompleto, con múltiples
+errores de interpretación. Además, puede incumplir varias condiciones de
+entrega.</td>
+<td align="left">No se elabora el informe o el contenido presentado es
+inadecuado o incorrecto.</td>
+</tr>
+</tbody>
+</table>
 
 
 
